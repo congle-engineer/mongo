@@ -1,17 +1,20 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 mongoose.Promise = global.Promise;
 
-const courseSchema = new mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
-  title: {
-    type: String,
-    required: true,
+const courseSchema = new mongoose.Schema(
+  {
+    _id: mongoose.Schema.Types.ObjectId,
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
   },
-  description: {
-    type: String,
-    required: true,
-  },
-}, { collection: 'course' });
+  { collection: "course" }
+);
 
-export default mongoose.model('Course', courseSchema);
+export default mongoose.model("Course", courseSchema);
